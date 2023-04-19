@@ -14,7 +14,7 @@ function draw(){
    ctx.beginPath();
    ctx.clearRect(0,0,900,600);
    let t = new Date();
-    document.getElementById("time").innerHTML = "time: " + t.toLocaleDateString('zh-CN',options);
+    // document.getElementById("time").innerHTML = "time: " + t.toLocaleDateString('zh-CN',options);
     ctx.save();//1
 
     //变坐标
