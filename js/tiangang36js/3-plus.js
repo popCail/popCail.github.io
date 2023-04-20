@@ -3,7 +3,6 @@ function draw(){
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
 
-    ctx.transform(0, 1, 1, 0, 0, 0);
 
     // c.width = 1500;
     // c.height = 1000;
