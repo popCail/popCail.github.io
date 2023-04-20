@@ -13,7 +13,5 @@ function draw(){
 
     ctx.fillStyle = "red";
     ctx.fill();
-
-
 }
 draw();

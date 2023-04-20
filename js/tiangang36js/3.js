@@ -1,56 +1,49 @@
 function draw() {
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
+
+    // c.width = 1500;
+    // c.height = 1000;
+
+    var w = c.width;
+    var h = c.height;
+    var eleW = w/30;
+    var eleH = h / 20;
     ctx.strokeStyle = "red";
-    ctx.rect(0, 0, 300, 200);
+    ctx.rect(0, 0, w, h);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(150, 0);
-    ctx.lineTo(150, 200);
-    ctx.moveTo(0, 100);
-    ctx.lineTo(300, 100);
+    ctx.moveTo(w/2, 0);
+    ctx.lineTo(w/2, h);
+    ctx.moveTo(0, h/2 );
+    ctx.lineTo(w, h/2);
     for (let i = 0; i < 10; i++) {
-        ctx.moveTo(0, i * 10);
-        ctx.lineTo(150, i * 10);
+        ctx.moveTo(0, i * eleH);
+        ctx.lineTo(w/2, i * eleH);
     }
     for (let i = 0; i < 15; i++) {
-        ctx.moveTo(10 * i, 0);
-        ctx.lineTo(10 * i, 100);
+        ctx.moveTo(eleW * i, 0);
+        ctx.lineTo(eleW * i, h/2 );
     }
     ctx.stroke();
 
-    // ctx.beginPath();
-    // ctx.strokeStyle = "black";
-    // ctx.arc(50, 50, 30, 0, 2 * Math.PI, false);
-    // ctx.stroke();
-    //
-    // ctx.beginPath();
-    // let arc = 2 * Math.PI / 5;
-    // ctx.moveTo(50, 50 - 30);
-    // ctx.lineTo(50 - 30 * Math.sin(2 * arc), 50 - 30 * Math.cos(2 * arc));
-    // ctx.lineTo(50 + 30 * Math.sin(arc), 50 - 30 * Math.cos(arc));
-    // ctx.lineTo(50 - 30 * Math.sin(arc), 50 - 30 * Math.cos(arc));
-    // ctx.lineTo(50 + 30 * Math.sin(2 * arc), 50 - 30 * Math.cos(2 * arc));
-    // ctx.closePath();
-    // ctx.stroke();
 
     ctx.strokeStyle = "black";
-    painStart(50,50,30,Math.PI,ctx);
-
-    painStart(100,20,10, -Math.atan(5/3),ctx);
-    painStart(120,40,10, -Math.atan(7/1),ctx);
-    painStart(120,70,10, - Math.PI/2 - Math.atan(2/7),ctx);
-    painStart(100,90,10,-Math.PI/2 - Math.atan(4/5),ctx);
+    painStart(5 *  eleW,5 * eleW, 3 * eleW ,  Math.PI,ctx);
+    painStart(10 * eleW,2 * eleW, 1 * eleW,  -Math.atan(5/3),ctx);
+    painStart(12 * eleW,4 * eleW, 1 * eleW, -Math.atan(7/1),ctx);
+    painStart(12 * eleW,7 * eleW, 1 * eleW ,  -Math.PI/2 - Math.atan(2/7),ctx);
+    painStart(10 * eleW,9 * eleW, 1 * eleW,  -Math.PI/2 - Math.atan(4/5),ctx);
 
     ctx.beginPath()
-    ctx.moveTo(50,50);
-    ctx.lineTo(100,20);
-    ctx.moveTo(50,50);
-    ctx.lineTo(120,40);
-    ctx.moveTo(50,50);
-    ctx.lineTo(120,70);
-    ctx.moveTo(50,50);
-    ctx.lineTo(100,90);
+    ctx.moveTo(5 * eleW,5 * eleW);
+    ctx.lineTo(10 * eleW,2 * eleW);
+    ctx.moveTo(5 * eleW,5 * eleW);
+    ctx.lineTo(12 * eleW,4 * eleW);
+    ctx.moveTo(5 * eleW,5 * eleW);
+    ctx.lineTo(12 * eleW,7 * eleW);
+    ctx.moveTo(5 * eleW,5 * eleW);
+    ctx.lineTo(10 * eleW,9 * eleW);
 
     ctx.stroke();
 
