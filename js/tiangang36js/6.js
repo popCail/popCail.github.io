@@ -24,7 +24,7 @@ function drawBall() {
     ctx.clearRect(1, 1, boxWidth - 2, boxHeight - 2);
     ctx.arc(ballX * PixelAndM, ballY * PixelAndM, ballR * PixelAndM, 0, 2 * Math.PI, false);
     ctx.fill();
-    document.getElementById("text").innerHTML = "X = " + ballX + " Y = " + ballY;
+    document.getElementById("text").innerHTML = "X = " +  Math.floor(ballX) + " Y = " + Math.floor(ballY);
 }
 
 function drawBox() {
