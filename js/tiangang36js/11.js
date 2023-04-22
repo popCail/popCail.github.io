@@ -15,7 +15,7 @@ function drawB() {
 
     ctx.fillStyle = '#9e02fb';
     for (let i = 5 * R / 4; i < width; i += R * 5 / 2) {
-        for (let j = 5 * R / 4; j < height; j += R * 7 / 3) {
+        for (let j = 5 * R / 4; j < height; j += R * 5 / 2) {
             ctx.beginPath();
             ctx.arc(i, j, R, 0, 2 * Math.PI, false);
             ctx.fill();
@@ -23,17 +23,20 @@ function drawB() {
     }
     var N = 8;
     ctx.lineWidth = R / N;
-    for (let i = 5 * R / 4; i < width; i += R * 5 / 2) {
-        for (let j = 5 * R / 4; j < height; j += R * 7 / 3) {
+        for (let i = 5 * R / 4; i < width; i += R * 5 / 2) {
+        for (let j = 5 * R / 4; j < height; j += R * 5 / 2) {
             let randomArc = Math.random() * 2 * Math.PI;
+
+            let arc = (j-i)*2/5/4/R*Math.PI;
+            // console.log((j-i)*2/5);
 
             ctx.strokeStyle = '#ffffff';
             ctx.beginPath();
-            ctx.arc(i, j, R*(N-1/2)/N,randomArc , randomArc + Math.PI, false);
+            ctx.arc(i, j, R*(N-1/2)/N,arc , arc + Math.PI, false);
             ctx.stroke();
             ctx.beginPath();
             ctx.strokeStyle = '#000000';
-            ctx.arc(i, j, R*(N-1/2)/N,randomArc + Math.PI , randomArc + 2 * Math.PI, false);
+            ctx.arc(i, j, R*(N-1/2)/N,arc + Math.PI , arc + 2 * Math.PI, false);
             ctx.stroke();
         }
     }
