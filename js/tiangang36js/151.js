@@ -39,11 +39,13 @@ function draw() {
 
     var n = getN(Math.random());
 
-    init[0] = a[n] * init[0] + b[n] * init[1] + e[n];
-    init[1] = c[n] * init[0] + d[n] * init[1] + f[n];
+    var x = a[n] * init[0] + b[n] * init[1] + e[n];
+    var y = c[n] * init[0] + d[n] * init[1] + f[n];
+     init[0] = x;
+     init[1] = y;
 }
 
-for (let i = 0; i < 999999; i++) {
+for (let i = 0; i < 50000; i++) {
     draw();
 }
 
